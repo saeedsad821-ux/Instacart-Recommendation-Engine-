@@ -1,0 +1,12 @@
+{
+  "model": "Cold_Start_Popularity_Fallback",
+  "k": 10,
+  "eval_user_count": 3048,
+  "precision_at_k": 0.06459973753280839,
+  "recall_at_k": 0.09836735848624718,
+  "f1_at_k": 0.06790535910461282,
+  "ndcg_at_k": 0.10580980851783649,
+  "hit_rate_at_k": 0.4179790026246719,
+  "catalog_coverage": 0.00020125583641925616,
+  "eval_computation_time": 0.017267942428588867
+}

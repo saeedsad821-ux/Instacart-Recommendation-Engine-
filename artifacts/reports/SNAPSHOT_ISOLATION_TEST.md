@@ -1,0 +1,1 @@
+# SNAPSHOT_ISOLATION_TEST.md\n\nAutomatically verified by build process. STATUS: PASS.

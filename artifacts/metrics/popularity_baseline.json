@@ -1,0 +1,16 @@
+{
+  "model": "Popularity_Baseline",
+  "k": 10,
+  "eval_user_count": 18438,
+  "precision_at_k": 0.2926022345156742,
+  "recall_at_k": 0.5370875870653217,
+  "f1_at_k": 0.32792424650839536,
+  "ndcg_at_k": 0.5104211398618836,
+  "hit_rate_at_k": 0.9141447011606465,
+  "catalog_coverage": 0.31538802125261634,
+  "eval_computation_time": 0.13528156280517578,
+  "train_time_sec": 3.2892701625823975,
+  "inference_time_sec": 3.448106527328491,
+  "inference_ms_per_user": 0.11147376591647778,
+  "total_test_users": 30932
+}

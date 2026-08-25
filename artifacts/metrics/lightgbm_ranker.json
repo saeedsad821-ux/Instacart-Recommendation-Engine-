@@ -1,0 +1,16 @@
+{
+  "model": "LightGBM_LambdaRanker",
+  "k": 10,
+  "eval_user_count": 18438,
+  "precision_at_k": 0.2961167154789023,
+  "recall_at_k": 0.5454607730150666,
+  "f1_at_k": 0.33235775265976747,
+  "ndcg_at_k": 0.5170945423031172,
+  "hit_rate_at_k": 0.9191343963553531,
+  "catalog_coverage": 0.3164546771856384,
+  "eval_computation_time": 0.14978241920471191,
+  "train_time_sec": 92.01323580741882,
+  "inference_time_sec": 0.5537099838256836,
+  "inference_ms_per_user": 0.01790087882534862,
+  "total_test_users": 30932
+}

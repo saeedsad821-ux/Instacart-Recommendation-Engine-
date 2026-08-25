@@ -1,0 +1,12 @@
+{
+  "hybrid_seq_metrics": {
+    "ndcg": 0.5502666135963922,
+    "recall": 0.5753440864616098,
+    "precision": 0.31631475838049633,
+    "hit_rate": 0.9314323030039181,
+    "coverage": 0.32810739011431334,
+    "latency_ms": 2.45
+  },
+  "delta_vs_baseline_v1": 0.032591195216255975,
+  "lstm_gru_gate_decision": "OPEN"
+}

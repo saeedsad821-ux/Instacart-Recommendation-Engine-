@@ -1,0 +1,20 @@
+{
+  "dataset_version": "1.0",
+  "preprocessing_version": "option_b_v1",
+  "split_version": "2.0",
+  "model_version": "2.0-sasrec",
+  "hyperparameters": {
+    "max_seq_len": 30,
+    "hidden_dim": 64,
+    "num_heads": 2,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "batch_size": 1024,
+    "learning_rate": 0.002,
+    "epochs": 3,
+    "num_neg_samples": 100
+  },
+  "train_time_sec": 165.0743169784546,
+  "model_file": "sasrec.pt",
+  "created_at": "Tue Aug  4 15:55:22 2026"
+}

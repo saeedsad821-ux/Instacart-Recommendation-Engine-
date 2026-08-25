@@ -1,0 +1,16 @@
+{
+  "model": "SASRec_Recommender",
+  "k": 10,
+  "eval_user_count": 18438,
+  "precision_at_k": 0.17865278229742923,
+  "recall_at_k": 0.3645473491839006,
+  "f1_at_k": 0.20712299000561543,
+  "ndcg_at_k": 0.28433235875095086,
+  "hit_rate_at_k": 0.8018765592797483,
+  "catalog_coverage": 0.24903397198518756,
+  "eval_computation_time": 0.17946195602416992,
+  "train_time_sec": 165.0743169784546,
+  "inference_time_sec": 2.306382179260254,
+  "inference_ms_per_user": 0.07456298264775164,
+  "total_test_users": 30932
+}

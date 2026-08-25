@@ -1,0 +1,92 @@
+{
+  "1-2 orders": {
+    "LightGBM": {
+      "ndcg_at_10": 0.0,
+      "recall_at_10": 0.0,
+      "precision_at_10": 0.0,
+      "hit_rate_at_10": 0.0,
+      "catalog_coverage": 0.0,
+      "eval_users": 0
+    },
+    "Popularity": {
+      "ndcg_at_10": 0.0,
+      "recall_at_10": 0.0,
+      "precision_at_10": 0.0,
+      "hit_rate_at_10": 0.0,
+      "catalog_coverage": 0.0,
+      "eval_users": 0
+    }
+  },
+  "3-4 orders": {
+    "LightGBM": {
+      "ndcg_at_10": 0.5960094145570264,
+      "recall_at_10": 0.7002225891094098,
+      "precision_at_10": 0.2868354430379747,
+      "hit_rate_at_10": 0.9367088607594937,
+      "catalog_coverage": 0.03753421349219127,
+      "eval_users": 395
+    },
+    "Popularity": {
+      "ndcg_at_10": 0.47132992061962586,
+      "recall_at_10": 0.6213888188422813,
+      "precision_at_10": 0.23822784810126582,
+      "hit_rate_at_10": 0.9113924050632911,
+      "catalog_coverage": 0.026424891321848335,
+      "eval_users": 395
+    }
+  },
+  "5-10 orders": {
+    "LightGBM": {
+      "ndcg_at_10": 0.5225053447878997,
+      "recall_at_10": 0.5754745026441,
+      "precision_at_10": 0.2910606060606061,
+      "hit_rate_at_10": 0.9166666666666666,
+      "catalog_coverage": 0.056331508613749796,
+      "eval_users": 660
+    },
+    "Popularity": {
+      "ndcg_at_10": 0.35587294273186093,
+      "recall_at_10": 0.43132419502719077,
+      "precision_at_10": 0.20515151515151517,
+      "hit_rate_at_10": 0.85,
+      "catalog_coverage": 0.025136853968765093,
+      "eval_users": 660
+    }
+  },
+  "11-20 orders": {
+    "LightGBM": {
+      "ndcg_at_10": 0.48675380429730936,
+      "recall_at_10": 0.48468656389614184,
+      "precision_at_10": 0.297119341563786,
+      "hit_rate_at_10": 0.8909465020576132,
+      "catalog_coverage": 0.0447794236032845,
+      "eval_users": 486
+    },
+    "Popularity": {
+      "ndcg_at_10": 0.27038395566437234,
+      "recall_at_10": 0.3098959886122056,
+      "precision_at_10": 0.16913580246913584,
+      "hit_rate_at_10": 0.7674897119341564,
+      "catalog_coverage": 0.01358476895829979,
+      "eval_users": 486
+    }
+  },
+  ">20 orders": {
+    "LightGBM": {
+      "ndcg_at_10": 0.46706844641455914,
+      "recall_at_10": 0.42950568909276393,
+      "precision_at_10": 0.3113345521023766,
+      "hit_rate_at_10": 0.9104204753199269,
+      "catalog_coverage": 0.04500080502334568,
+      "eval_users": 547
+    },
+    "Popularity": {
+      "ndcg_at_10": 0.2389981722691981,
+      "recall_at_10": 0.23229148803621782,
+      "precision_at_10": 0.1623400365630713,
+      "hit_rate_at_10": 0.7477148080438757,
+      "catalog_coverage": 0.0098212848172597,
+      "eval_users": 547
+    }
+  }
+}

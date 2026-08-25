@@ -1,0 +1,16 @@
+{
+  "total_users": 206209,
+  "train_users": 144346,
+  "val_users": 30931,
+  "test_users": 30932,
+  "total_raw_prior_rows": 32434489,
+  "train_prior_rows": 22750089,
+  "val_prior_rows": 4837442,
+  "test_prior_rows": 4846958,
+  "total_static_candidate_rows": 13514162,
+  "train_static_candidate_rows": 9479779,
+  "val_static_candidate_rows": 2017612,
+  "test_static_candidate_rows": 2016771,
+  "avg_static_candidates_per_user": 65.53623750660738,
+  "dynamic_candidates_per_user": 100.0
+}

@@ -1,0 +1,36 @@
+{
+  "dataset_version": "1.0",
+  "preprocessing_version": "option_b_v1",
+  "split_version": "2.0",
+  "model_version": "2.0-lambdarank",
+  "hyperparameters": {
+    "objective": "lambdarank",
+    "metric": "ndcg",
+    "ndcg_eval_at": [
+      10
+    ],
+    "boosting_type": "gbdt",
+    "n_estimators": 300,
+    "learning_rate": 0.08,
+    "num_leaves": 63,
+    "min_child_samples": 50,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "train_time_sec": 92.01323580741882,
+  "best_iteration": 111,
+  "feature_importance_gain": {
+    "hist_order_count": 242288.09670341015,
+    "user_total_orders": 41186.88456702232,
+    "user_reorder_rate": 860511.5368247032,
+    "recency_days": 4060.896520614624,
+    "global_order_count": 25573.377857089043,
+    "global_reorder_rate": 175334.57576739788,
+    "aisle_id": 5949.867674469948,
+    "department_id": 12840.975588321686
+  },
+  "model_file": "lightgbm_ranker.txt",
+  "created_at": "Tue Aug  4 15:42:52 2026"
+}

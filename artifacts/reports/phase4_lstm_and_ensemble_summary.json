@@ -1,0 +1,12 @@
+{
+  "gru_lstm_metrics": {
+    "ndcg": 0.49827756138058177,
+    "recall": 0.5217849346674613,
+    "precision": 0.28705376578145403,
+    "hit_rate": 0.9092294296909011,
+    "coverage": 0.3862502012558364,
+    "latency_ms": 0.05019144669509004
+  },
+  "best_ensemble_ndcg": 0.5504045040048613,
+  "best_ensemble_weight": 0.95
+}

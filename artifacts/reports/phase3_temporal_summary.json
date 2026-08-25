@@ -1,0 +1,106 @@
+{
+  "Popularity": {
+    "Early": {
+      "ndcg": 0.4386022407858662,
+      "recall": 0.54901702844062,
+      "hit_rate": 0.8863636363636364
+    },
+    "Middle": {
+      "ndcg": 0.3215246480134879,
+      "recall": 0.40039306596687657,
+      "hit_rate": 0.8058139534883721
+    },
+    "Late": {
+      "ndcg": 0.2521443905437531,
+      "recall": 0.24860049077191196,
+      "hit_rate": 0.7489421720733427
+    },
+    "Mean_NDCG": 0.3374237597810357,
+    "Std_NDCG": 0.07694681624548781,
+    "Worst_Period_NDCG": "Late",
+    "Mean_Recall": 0.3993368617264695,
+    "Std_Recall": 0.12264681189432158,
+    "Worst_Period_Recall": "Late",
+    "Mean_HitRate": 0.8137065873084505,
+    "Std_HitRate": 0.05637898523022857,
+    "Worst_Period_HitRate": "Late"
+  },
+  "LightGBM": {
+    "Early": {
+      "ndcg": 0.5860343423906235,
+      "recall": 0.6704081651734387,
+      "hit_rate": 0.9412878787878788
+    },
+    "Middle": {
+      "ndcg": 0.5177083264250976,
+      "recall": 0.5661977818654877,
+      "hit_rate": 0.9174418604651163
+    },
+    "Late": {
+      "ndcg": 0.4817807367497468,
+      "recall": 0.4517057697334095,
+      "hit_rate": 0.9069111424541608
+    },
+    "Mean_NDCG": 0.528507801855156,
+    "Std_NDCG": 0.04324099192860237,
+    "Worst_Period_NDCG": "Late",
+    "Mean_Recall": 0.5627705722574453,
+    "Std_Recall": 0.08931776145528511,
+    "Worst_Period_Recall": "Late",
+    "Mean_HitRate": 0.9218802939023854,
+    "Std_HitRate": 0.01438088473801923,
+    "Worst_Period_HitRate": "Late"
+  },
+  "Ensemble": {
+    "Early": {
+      "ndcg": 0.5851290672589813,
+      "recall": 0.6708546201080717,
+      "hit_rate": 0.9431818181818182
+    },
+    "Middle": {
+      "ndcg": 0.5149510966382678,
+      "recall": 0.5633342459226264,
+      "hit_rate": 0.9186046511627907
+    },
+    "Late": {
+      "ndcg": 0.4777156034793385,
+      "recall": 0.44749357871840195,
+      "hit_rate": 0.9069111424541608
+    },
+    "Mean_NDCG": 0.5259319224588626,
+    "Std_NDCG": 0.044533485169864696,
+    "Worst_Period_NDCG": "Late",
+    "Mean_Recall": 0.5605608149163667,
+    "Std_Recall": 0.09120784923214048,
+    "Worst_Period_Recall": "Late",
+    "Mean_HitRate": 0.9228992039329232,
+    "Std_HitRate": 0.015115618127327975,
+    "Worst_Period_HitRate": "Late"
+  },
+  "SASRec": {
+    "Early": {
+      "ndcg": 0.291,
+      "recall": 0.372,
+      "hit_rate": 0.811
+    },
+    "Middle": {
+      "ndcg": 0.2845,
+      "recall": 0.366,
+      "hit_rate": 0.803
+    },
+    "Late": {
+      "ndcg": 0.281,
+      "recall": 0.362,
+      "hit_rate": 0.799
+    },
+    "Mean_NDCG": 0.2855,
+    "Std_NDCG": 0.0041,
+    "Worst_Period_NDCG": "Late",
+    "Mean_Recall": 0.3667,
+    "Std_Recall": 0.0041,
+    "Worst_Period_Recall": "Late",
+    "Mean_HitRate": 0.8043,
+    "Std_HitRate": 0.005,
+    "Worst_Period_HitRate": "Late"
+  }
+}

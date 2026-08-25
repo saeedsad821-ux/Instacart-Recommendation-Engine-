@@ -1,0 +1,16 @@
+{
+  "model": "Ensemble_Ranker_LGBM_SASRec",
+  "k": 10,
+  "eval_user_count": 18438,
+  "precision_at_k": 0.29611671547890234,
+  "recall_at_k": 0.5453148613582791,
+  "f1_at_k": 0.332336735711287,
+  "ndcg_at_k": 0.5168701908096964,
+  "hit_rate_at_k": 0.918917453086018,
+  "catalog_coverage": 0.309249718241829,
+  "eval_computation_time": 0.3550074100494385,
+  "train_time_sec": 0.0,
+  "inference_time_sec": 1.4455797672271729,
+  "inference_ms_per_user": 0.046734118945660576,
+  "total_test_users": 30932
+}

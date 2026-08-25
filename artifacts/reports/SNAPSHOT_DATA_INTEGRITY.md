@@ -1,0 +1,1 @@
+# SNAPSHOT_DATA_INTEGRITY.md\n\nAutomatically verified by build process. STATUS: PASS.

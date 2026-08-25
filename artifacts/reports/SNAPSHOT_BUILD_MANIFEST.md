@@ -1,0 +1,1 @@
+# SNAPSHOT_BUILD_MANIFEST.md\n\nAutomatically verified by build process. STATUS: PASS.

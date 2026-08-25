@@ -1,0 +1,8 @@
+{
+  "eval_user_count": 18438,
+  "mean_candidate_count": 100.0,
+  "candidate_recall_at_50": 0.7887115369570322,
+  "candidate_recall_at_100": 0.9405904271777185,
+  "generation_time_sec": 1.0189061164855957,
+  "ms_per_user": 0.03294019515342027
+}
