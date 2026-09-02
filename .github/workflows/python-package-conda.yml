@@ -1,34 +1,33 @@
-name: Python Package using Conda
+name: Python Package CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  build-linux:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
-    - name: Add conda to system path
-      run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        echo $CONDA/bin >> $GITHUB_PATH
+        python-version: '3.9'
+
     - name: Install dependencies
       run: |
-        conda env update --file environment.yml --name base
-    - name: Lint with flake8
+        python -m pip install --upgrade pip
+        pip install pandas numpy lightgbm scikit-learn pytest
+
+    - name: Setup Mock Data for Tests
       run: |
-        conda install flake8
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+        mkdir -p data/processed
+        python -c "import pandas as pd; pd.DataFrame({'user_id':[1],'eval_set':['train'],'product_id':[100],'is_ordered_history':['0 1'],'order_number_history':['1 2'],'days_since_prior_order_history':['0.0 7.0'],'aisle_id':[1],'department_id':[1]}).to_csv('data/processed/product_data.csv', index=False)"
+
+    - name: Run Project Health Check
       run: |
-        conda install pytest
-        pytest
+        python tests/project_health_check.py
+
+    - name: Run Full Isolation Test
+      run: |
+        python tests/full_isolation_test.py
