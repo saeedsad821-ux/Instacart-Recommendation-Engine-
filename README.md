@@ -17,7 +17,7 @@ What sets this project apart is its rigorous, multi-phase forensic validation fr
 
 ## 🌟 Key Features
 
-*   🏆 **Champion ML Model**: Utilizes a frozen, rigorously validated **LightGBM hybrid sequence model** (\lightgbm_hybrid_seq\) for ultra-accurate product ranking.
+*   🏆 **Champion ML Model**: Utilizes a frozen, rigorously validated **LightGBM hybrid sequence model** (`lightgbm_hybrid_seq`) for ultra-accurate product ranking.
 *   ⚡ **High-Performance Data Layer**: Replaced heavy CSV-based data loading with lightning-fast offline stores. Reduced memory footprint from >15GB to **~235MB**.
 *   🧠 **Intelligent Candidate Generation**: Combines historical frequency, basket recency, similarity (co-purchase/affinity), and long-tail discovery strategies.
 *   🛡️ **Zero Data Leakage**: Enforces strict chronological boundaries, ensuring the model never sees future interactions during training.
@@ -39,31 +39,28 @@ Under extreme concurrent load tests:
 
 The system is modularly designed to separate concerns and ensure maintainability. Below is the high-level data flow and execution pipeline:
 
-\\mermaid
+```mermaid
 graph TD
-    A[Raw Data: Instacart CSVs] -->|preprocessing/| B(Data Engineering Layer)
-    B -->|Time-Split Users| C{Deep Sequence Models}
+    A[Raw Data: Instacart Transactions] --> B(Preprocessing Layer)
+    B --> C{Sequential Deep Learning}
     
-    C --> D1[RNN Aisle Model]
-    C --> D2[RNN Dept Model]
-    C --> D3[RNN Product Model]
-    C --> D4[SGNS & NNMF Embeddings]
+    C -->|Aisle Patterns| D1["RNN Aisle Model"]
+    C -->|Dept Patterns| D2["RNN Department Model"]
+    C -->|Product Patterns| D3["RNN Product Model"]
+    C -->|Semantic Spaces| D4["SGNS & NNMF Embeddings"]
     
-    B -->|Candidates| E(Feature Engineering)
+    B --> E(Candidate Generation)
+    E -->|Top N Popular/Reordered| F(Feature Engineering Layer)
     
-    D1 --> E
-    D2 --> E
-    D3 --> E
-    D4 --> E
+    D1 --> F
+    D2 --> F
+    D3 --> F
+    D4 --> F
     
-    E -->|Point-in-Time Features| F[LightGBM Hybrid Ranker]
-    
-    F -->|Reranking & Validation| G((Final Ranked Recommendations))
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#ff9,stroke:#333,stroke-width:4px
-    style G fill:#bbf,stroke:#333,stroke-width:2px
-\
+    F -->|Point-in-Time Features| G["LightGBM Hybrid Ranker"]
+    G --> H["Final Ranked Recommendations"]
+```
+
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
@@ -72,28 +69,32 @@ graph TD
 
 ### 2. Installation
 Clone the repository and install dependencies:
-\\ash
+```bash
 git clone https://github.com/saeedsad821-ux/Instacart-Recommendation-Engine-.git
 cd Instacart-Recommendation-Engine-
 pip install -r requirements.txt
-\
+```
+
 ### 3. Data Preparation
-Ensure offline stores are generated in \data/processed/\. If you have the raw Instacart data in \data/raw/\, you can execute the full pipeline:
-\\ash
+Ensure offline stores are generated in `data/processed/`. If you have the raw Instacart data in `data/raw/`, you can execute the full pipeline:
+```bash
 bash run.sh
-\*(Note: For immediate testing, mock data can be placed in \data/processed/product_data.csv\ to satisfy health checks).*
+```
+*(Note: For immediate testing, mock data can be placed in `data/processed/product_data.csv` to satisfy health checks).*
 
 ### 4. System Health Check
 Verify that the champion model has not been tampered with and the environment is properly isolated:
-\\ash
+```bash
 python tests/project_health_check.py
 python tests/full_isolation_test.py
-\
+```
+
 ### 5. Running Inference
 Execute the inference pipeline to generate real-time recommendations for a specific user:
-\\ash
+```bash
 python run_inference.py --user-id 1 --top-k 10
-\
+```
+
 ---
 
 ## 🔬 Forensic Validation & Scientific Verdict
@@ -105,4 +106,4 @@ This project underwent an unprecedented **27-phase forensic audit and hardening 
 *   **Metric Reconciliation**: Strict evaluator divergence resolved.
 *   **Status**: FROZEN CHAMPION v1.0 — VERIFIED.
 
-For detailed audit logs, please review the markdown reports automatically generated inside \rtifacts/reports/\.
+For detailed audit logs, please review the markdown reports automatically generated inside `artifacts/reports/`.
