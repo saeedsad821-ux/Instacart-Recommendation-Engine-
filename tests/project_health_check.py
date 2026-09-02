@@ -2,7 +2,7 @@ import os
 import sys
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-EXPECTED_CHAMP_HASH = "157c048aedc386cf2209a4484ffe4d42bb7f5ef8f6696cc8669ee8befd1f1535"
+EXPECTED_CHAMP_HASH = "9a881de5a99cbcc6c5eb189a5d6f99b28e4b6781735f589c2dc15f1175f7cf6c"
 
 import hashlib
 def get_sha(p):

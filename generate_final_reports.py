@@ -2,7 +2,7 @@ import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 import os
 
-out_dir = os.path.join(PROJECT_ROOT, "artifacts/reports").replace("\", "/")
+out_dir = os.path.join(PROJECT_ROOT, "artifacts/reports").replace("\\\\", "/")
 os.makedirs(out_dir, exist_ok=True)
 
 reports = {}

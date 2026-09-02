@@ -98,7 +98,7 @@ class TFBaseModel(object):
 
         self.graph = self.build_graph()
         self.session = tf.Session(graph=self.graph)
-        print 'built graph'
+        print('built graph')
 
     def calculate_loss(self):
         raise NotImplementedError('subclass must implement this')
@@ -216,7 +216,7 @@ class TFBaseModel(object):
             test_generator = self.reader.test_batch_generator(chunk_size)
             for i, test_batch_df in enumerate(test_generator):
                 if i % 100 == 0:
-                    print i*chunk_size
+                    print(i*chunk_size)
 
                 test_feed_dict = {
                     getattr(self, placeholder_name, None): data

@@ -13,5 +13,5 @@ files = [
     "feature_distribution_audit.py"
 ]
 for f in files:
-    with open(fos.path.join(PROJECT_ROOT, "models/phase5/{f}").replace("\", "/"), "w") as out:
+    with open(fos.path.join(PROJECT_ROOT, "models/phase5/{f}").replace("\\", "/"), "w") as out:
         out.write('print("See phase5b_forensic_causality_audit.py for execution of this test")\n')

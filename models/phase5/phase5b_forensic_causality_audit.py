@@ -40,11 +40,11 @@ def run_phase5b(root_dir="."):
     print("             PHASE 5B FINAL FORENSIC CAUSALITY VERDICT")
     print("========================================================================")
     
-    splits_dir = os.path.join(PROJECT_ROOT, "artifacts/splits").replace("\", "/")
+    splits_dir = os.path.join(PROJECT_ROOT, "artifacts/splits").replace("\\", "/")
     raw_dir = "C:/Users/Admin/Downloads"
-    model_path = os.path.join(PROJECT_ROOT, "artifacts/models/phase4/lightgbm_hybrid_seq/lightgbm_hybrid_seq.txt").replace("\", "/")
-    v1_model_path = os.path.join(PROJECT_ROOT, "artifacts/models/lightgbm_ranker/lightgbm_ranker.txt").replace("\", "/")
-    out_dir = os.path.join(PROJECT_ROOT, "artifacts/reports").replace("\", "/")
+    model_path = os.path.join(PROJECT_ROOT, "artifacts/models/phase4/lightgbm_hybrid_seq/lightgbm_hybrid_seq.txt").replace("\\", "/")
+    v1_model_path = os.path.join(PROJECT_ROOT, "artifacts/models/lightgbm_ranker/lightgbm_ranker.txt").replace("\\", "/")
+    out_dir = os.path.join(PROJECT_ROOT, "artifacts/reports").replace("\\", "/")
     os.makedirs(out_dir, exist_ok=True)
     
     print("[INFO] Loading validation/test users...")
@@ -78,7 +78,7 @@ def run_phase5b(root_dir="."):
 
     print("[INFO] Loading Labeled Test Candidate Rows (eval_set == 'train')...")
     test_chunks = []
-    processed_path = os.path.join(PROJECT_ROOT, "data/processed/product_data.csv").replace("\", "/")
+    processed_path = os.path.join(PROJECT_ROOT, "data/processed/product_data.csv").replace("\\", "/")
     count = 0
     for chunk in pd.read_csv(processed_path, chunksize=500000, keep_default_na=False):
         sub_t = chunk[chunk['user_id'].isin(u_test) & (chunk['eval_set'] == 'train')]
