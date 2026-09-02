@@ -17,7 +17,7 @@ What sets this project apart is its rigorous, multi-phase forensic validation fr
 
 ## 🌟 Key Features
 
-*   🏆 **Champion ML Model**: Utilizes a frozen, rigorously validated **LightGBM hybrid sequence model** (lightgbm_hybrid_seq) for ultra-accurate product ranking.
+*   🏆 **Champion ML Model**: Utilizes a frozen, rigorously validated **LightGBM hybrid sequence model** (\lightgbm_hybrid_seq\) for ultra-accurate product ranking.
 *   ⚡ **High-Performance Data Layer**: Replaced heavy CSV-based data loading with lightning-fast offline stores. Reduced memory footprint from >15GB to **~235MB**.
 *   🧠 **Intelligent Candidate Generation**: Combines historical frequency, basket recency, similarity (co-purchase/affinity), and long-tail discovery strategies.
 *   🛡️ **Zero Data Leakage**: Enforces strict chronological boundaries, ensuring the model never sees future interactions during training.
@@ -37,18 +37,32 @@ Under extreme concurrent load tests:
 
 ## 🏗️ Architecture
 
-The system is modularly designed to separate concerns, enforce immutability where needed, and ensure maintainability:
+The system is modularly designed to separate concerns and ensure maintainability. Below is the high-level data flow and execution pipeline:
 
-\\	ext
-Instacart-Recommendation-Engine/
-├── run_inference.py     # Command-line entry point for running user predictions
-├── run.sh               # Bash script to execute the entire training pipeline
-├── ABOUT.md             # In-depth architectural and algorithmic vision 
-├── preprocessing/       # Data processing scripts (user, product, aisle data)
-├── models/              # Model definitions, phases, and auditing logic (Phases 2-5)
-├── tests/               # System health checks and full isolation tests
-├── artifacts/           # Saved model binaries, metrics, and generated forensic reports
-└── data/                # Raw and processed datasets required for training and inference
+\\mermaid
+graph TD
+    A[Raw Data: Instacart CSVs] -->|preprocessing/| B(Data Engineering Layer)
+    B -->|Time-Split Users| C{Deep Sequence Models}
+    
+    C --> D1[RNN Aisle Model]
+    C --> D2[RNN Dept Model]
+    C --> D3[RNN Product Model]
+    C --> D4[SGNS & NNMF Embeddings]
+    
+    B -->|Candidates| E(Feature Engineering)
+    
+    D1 --> E
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    
+    E -->|Point-in-Time Features| F[LightGBM Hybrid Ranker]
+    
+    F -->|Reranking & Validation| G((Final Ranked Recommendations))
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#ff9,stroke:#333,stroke-width:4px
+    style G fill:#bbf,stroke:#333,stroke-width:2px
 \
 ## 🚀 Getting Started
 
@@ -92,4 +106,3 @@ This project underwent an unprecedented **27-phase forensic audit and hardening 
 *   **Status**: FROZEN CHAMPION v1.0 — VERIFIED.
 
 For detailed audit logs, please review the markdown reports automatically generated inside \rtifacts/reports/\.
-
